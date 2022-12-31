@@ -12,8 +12,9 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
 // mongoose.connect("mongodb://127.0.0.1:27017/todolistDB");
-mongoose.connect(process.env.MONGODB_URI);
 mongoose.set('strictQuery', true);
+mongoose.connect(process.env.MONGODB_URI);
+
 
 const itemsSchema = {
    name:String
